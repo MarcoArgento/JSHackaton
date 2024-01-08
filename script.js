@@ -755,7 +755,7 @@ function animDiv() {
         dimens += 1;
         divAnim.style.width = dimens + "%";
         divAnim.style.height = dimens + "%";
-        if (dimens == 40) max = true;
+        if (dimens == 27) max = true;
       } else {
         dimens -= 1;
         divAnim.style.width = dimens + "%";
