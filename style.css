@@ -1,0 +1,1573 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-image: url("sala\ riunioni.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#info {
+  position: absolute;
+  left: 95%;
+  top: 3%;
+  height: 6%;
+  width: 3%;
+}
+
+#puntInt {
+  height: 100%;
+  width: 100%;
+}
+
+#puntInt:hover {
+  cursor: pointer;
+}
+
+#instruction {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: blue;
+  border: 1px solid black;
+  z-index: 3;
+  top: 1%;
+  width: 97%;
+  height: auto;
+}
+
+#howTo {
+  text-align: center;
+}
+
+#close:hover {
+  cursor: pointer;
+}
+
+#TV {
+  position: relative;
+  height: 75%;
+  width: 80%;
+  border: 3px solid black;
+  margin-top: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#black {
+  position: absolute;
+  height: 98%;
+  width: 100%;
+  background-color: black;
+  z-index: 2;
+}
+
+#canali {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 95%;
+  width: 10%;
+  height: 4px;
+  visibility: hidden;
+  z-index: 2;
+}
+
+#channel {
+  width: 20%;
+  /*background-color: yellow;*/
+  border: none;
+}
+
+#inf {
+  position: absolute;
+  width: 100%;
+  height: 2%;
+  bottom: 0%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#spia {
+  border-radius: 3px;
+  height: 8px;
+  width: 8px;
+  margin-top: 2px;
+}
+
+#telecomando {
+  margin-top: 1%;
+}
+
+#tb {
+  border: 2px solid black;
+  background-color: rgb(53, 50, 50);
+}
+
+#onOff {
+  height: 15px;
+  width: 15px;
+  border-radius: 10px;
+  background-color: red;
+  margin-left: 3px;
+}
+
+#AccSp {
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  height: 20px;
+  width: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#frecciaSu {
+  height: 14px;
+  width: 17px;
+  margin-left: -1px;
+}
+
+#frecciaGiu {
+  height: 14px;
+  width: 17px;
+  margin-left: -1px;
+  transform: rotate(180deg);
+}
+
+/*ESERCIZI*/
+
+/*1)*/
+
+#es1 {
+  position: absolute;
+  display: flex;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+.contenuto1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  height: 33px;
+  margin-left: 4%;
+}
+
+#cambio {
+  display: flex;
+  gap: 2px;
+}
+
+#num {
+  margin-top: 1px;
+  font-size: 30px;
+  color: white;
+}
+
+#colore {
+  margin-top: 4px;
+}
+
+#cambia {
+  width: auto;
+  margin-top: 7px;
+}
+
+/*2)*/
+
+#es2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#add {
+  display: flex;
+  gap: 2px;
+}
+
+#testo {
+  margin-top: 4px;
+}
+
+#aggiungi {
+  width: auto;
+  margin-top: 7px;
+}
+
+#newelem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20%;
+}
+
+/*3)*/
+
+#es3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+.contenuto2 {
+  width: auto;
+  height: auto;
+  margin-left: 4%;
+}
+
+#image {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 40%;
+  height: 46%;
+}
+
+#image-uni {
+  height: 100%;
+  width: 100%;
+}
+
+/*4)*/
+
+#es4 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#rim {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+  gap: 10px;
+}
+
+/*5)*/
+
+#es5 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#effetto {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#effetto:hover {
+  color: red;
+}
+
+/*6)*/
+
+#es6 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#paragrafo6 {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#nascondiMostra {
+  width: auto;
+  margin-top: 7px;
+}
+
+#nasc {
+  display: flex;
+  gap: 2px;
+}
+
+/*7)*/
+
+#es7 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#modPar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15%;
+  height: auto;
+}
+
+#pulsantiMod {
+  display: flex;
+  gap: 4px;
+  margin-left: 20%;
+}
+
+#ParTarget {
+  position: absolute;
+  visibility: visible;
+}
+
+#nuovopar {
+  position: absolute;
+  visibility: hidden;
+  width: auto;
+}
+
+#modifica {
+  margin-left: 25px;
+}
+
+#matita {
+  height: 16px;
+  width: 16px;
+}
+
+#spunta {
+  height: 16px;
+  width: 16px;
+  color: green;
+}
+
+/*8)*/
+
+#es8 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#contIm {
+  display: flex;
+  width: 40%;
+  height: 52%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#universo2 {
+  height: 60%;
+  width: 60%;
+}
+
+/*9)*/
+
+#es9 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#parCol {
+  text-align: center;
+  margin-top: 15%;
+}
+
+/*10)*/
+
+#es10 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#threeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  gap: 5px;
+}
+
+.btn {
+  width: auto;
+}
+
+/*11)*/
+
+#es11 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#attivo {
+  text-align: center;
+  margin-top: 16%;
+}
+
+#attivo:active {
+  color: yellow;
+}
+
+/*12)*/
+
+#es12 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#lista1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 16%;
+  width: auto;
+  height: auto;
+}
+
+li {
+  width: auto;
+}
+
+.elem1 {
+  width: auto;
+}
+
+.elem1:hover {
+  background-color: yellow;
+}
+
+/*13)*/
+
+#es13 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#lista2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 6%;
+}
+
+#list2 {
+  display: flex;
+  flex-direction: column;
+  list-style: disc;
+  width: auto;
+  height: auto;
+  margin-top: 1%;
+}
+
+#btn-add {
+  display: flex;
+  gap: 4px;
+}
+
+#add-li {
+  width: auto;
+}
+
+/*14)*/
+
+#es14 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#btn-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 16%;
+  gap: 6px;
+}
+
+#button-add {
+  width: auto;
+}
+
+/*#circleCount {
+  border: 3px solid white;
+  border-radius: 100%;
+  height: 25px;
+  width: 25px;
+  margin-top: -0.5%;
+}*/
+
+/*15)*/
+
+#es15 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#divTar {
+  width: 10%;
+  height: 18%;
+  margin: auto;
+  background-color: green;
+}
+
+#istruzioni {
+  position: absolute;
+  margin-top: 15%;
+  margin-left: 4%;
+}
+
+/*16)*/
+
+#es16 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#contDivImages {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 50%;
+  height: 62%;
+  margin: auto;
+  gap: 4%;
+}
+
+.smImg {
+  height: 17%;
+  width: 22%;
+}
+
+.small {
+  height: 100%;
+  width: 100%;
+}
+
+.MxImg {
+  height: 72%;
+  width: 100%;
+}
+
+#maxi {
+  height: 100%;
+  width: 100%;
+}
+
+/*17)*/
+
+#es17 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-menu {
+  position: relative;
+  height: 4%;
+  width: 7%;
+  margin-left: 45%;
+  margin-top: 16%;
+}
+
+#cont-tend {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+#scrittamenu {
+  color: blue;
+}
+
+#compr {
+  width: 20px;
+  height: 20px;
+  transform: rotate(180deg);
+}
+
+#cont-tend:hover {
+  cursor: pointer;
+}
+
+#menu-tend {
+  position: absolute;
+  visibility: hidden;
+  width: 100%;
+  height: 380%;
+  margin: auto;
+  border: 1px solid gray;
+  background-color: gray;
+  z-index: 1;
+}
+
+#cont-menu:hover > div#cont-tend #compr {
+  transform: rotate(0deg);
+}
+
+#cont-menu:hover > #menu-tend {
+  visibility: visible;
+}
+
+#lista3 {
+  list-style: none;
+}
+
+.elem-menu {
+  font-size: 14px;
+}
+
+/*18)*/
+
+#es18 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-anim {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+#istr {
+  position: absolute;
+  margin-top: -30%;
+}
+
+#anim {
+  width: 20%;
+  height: 26%;
+  background-color: red;
+}
+
+#contF {
+  display: flex;
+  height: auto;
+  width: auto;
+}
+
+#muovi-s {
+  height: auto;
+  width: auto;
+}
+
+#muovi-d {
+  height: auto;
+  width: auto;
+}
+
+#frecciaS {
+  transform: rotate(-90deg);
+  height: 46px;
+  width: 46px;
+}
+
+#frecciaD {
+  transform: rotate(90deg);
+  height: 46px;
+  width: 46px;
+}
+
+/*19)*/
+
+#es19 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#istr3 {
+  text-align: center;
+}
+
+#write {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  gap: 4%;
+}
+
+/*20)*/
+
+#es20 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#ctr-vis {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  gap: 4%;
+}
+
+/*21)*/
+
+#es21 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-sty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  gap: 4%;
+}
+
+/*22)/*/
+
+#es22 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#contImm {
+  position: relative;
+  display: flex;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+#slider {
+  height: 100%;
+  width: 100%;
+}
+
+#buttons {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.scorr {
+  height: 40px;
+  width: 40px;
+}
+
+#sx {
+  height: 100%;
+  width: 100%;
+  transform: rotate(-90deg);
+}
+
+#dx {
+  height: 100%;
+  width: 100%;
+  transform: rotate(90deg);
+}
+
+/*23)*/
+
+#es23 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-dis {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#istr-dis {
+  position: absolute;
+  top: 10%;
+}
+
+#div-dis {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  background-color: orangered;
+}
+
+#btn-dis {
+  position: absolute;
+  height: auto;
+  width: auto;
+}
+
+.dis:hover {
+  cursor: pointer;
+}
+
+/*24)*/
+
+#es24 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#timer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35%;
+  margin-top: 14%;
+  height: 30%;
+  width: 30%;
+  border: 2px solid black;
+}
+
+#int-tim {
+  position: absolute;
+  height: auto;
+  width: 100%;
+  background-color: chocolate;
+}
+
+#tit-tim {
+  margin-top: 1%;
+  margin-left: 36%;
+}
+
+#temp {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: 15%;
+}
+
+.cella {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 20%;
+  gap: 1px;
+}
+
+.dig {
+  position: absolute;
+  width: 60%;
+  bottom: 0%;
+}
+
+#due-p {
+  margin-top: 16px;
+}
+
+#funz {
+  position: absolute;
+  display: flex;
+  height: auto;
+  justify-content: center;
+  width: 100%;
+  bottom: 0%;
+  background-color: chocolate;
+  gap: 2px;
+}
+
+.btn-fun {
+  height: auto;
+  width: auto;
+}
+
+/*25)*/
+
+#es25 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#div-coord {
+  height: 20%;
+  width: 20%;
+  margin-top: 16%;
+  margin-left: 40%;
+  background-color: yellow;
+}
+
+#coord-x {
+  position: absolute;
+  top: 75%;
+  left: 40%;
+}
+
+#coord-y {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+}
+
+/*26)*/
+
+#es26 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#list-sf {
+  margin-top: 4px;
+}
+
+/*27)*/
+
+#es27 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#cont-bar {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-left: 30%;
+  border: 1px solid black;
+  background-color: orange;
+}
+
+#bar {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 0%;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+#bar-car {
+  position: absolute;
+  left: 0%;
+  height: 100%;
+  width: 0%;
+  background-color: green;
+}
+
+#perc-car {
+  position: absolute;
+  left: 47%;
+}
+
+#aum-perc {
+  position: absolute;
+  height: auto;
+  width: auto;
+  top: 50%;
+  left: 43%;
+}
+
+/*28)*/
+
+#es28 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#cont-form {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+
+#cont-dati2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cont-dati {
+  display: flex;
+  gap: 10%;
+}
+
+#form1 {
+  border: 1px solid black;
+}
+
+#top-form {
+  display: grid;
+  gap: 1%;
+}
+
+#form-head {
+  text-align: center;
+}
+
+.avviso {
+  font-size: 10px;
+  color: red;
+}
+
+#btn-canc {
+  height: auto;
+  width: auto;
+}
+
+#btn-subm {
+  height: auto;
+  width: auto;
+}
+
+/*29)*/
+
+#es29 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#tit-toolt {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  top: 12%;
+}
+
+#cont-effects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16%;
+  width: 100%;
+  height: 30%;
+}
+
+.cont-toolt {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin: auto;
+  justify-content: center;
+}
+
+.toolt {
+  position: absolute;
+  visibility: hidden;
+  background-color: yellow;
+  width: 40%;
+  height: auto;
+  left: 100%;
+}
+
+.cont-toolt:hover .toolt {
+  visibility: visible;
+}
+
+#img-toolt {
+  height: 100%;
+  width: 100%;
+}
+
+/*30)*/
+
+#es30 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#cont-imm-drag {
+  width: 100%;
+  height: 80%;
+}
+
+#img-drag {
+  position: absolute;
+  cursor: move;
+  top: 15px;
+  left: 15px;
+  height: auto;
+  width: 10%;
+  background-color: transparent;
+}
+
+#div-target {
+  position: absolute;
+  top: 37%;
+  left: 34%;
+  width: 30%;
+  height: 30%;
+  border: 2px solid black;
+}
+
+.overClass {
+  position: relative;
+  background-color: yellow;
+}
+
+/*31)*/
+
+#es31 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#cont-gen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  margin: auto;
+  gap: 14%;
+}
+
+#gen-num {
+  height: auto;
+  width: auto;
+}
+
+/*32)*/
+
+#es32 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#cont-animaz {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  margin: auto;
+  gap: 14%;
+}
+
+#div-animato {
+  position: absolute;
+  top: 35%;
+  height: 20%;
+  width: 20%;
+  background-color: red;
+  transform: rotate(0deg);
+}
+
+#cont-btn-gen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  gap: 0.5%;
+}
+
+.gen-anim {
+  height: auto;
+  width: auto;
+}
+
+/*33)*/
+
+#es33 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: #dbc5c5;
+  visibility: hidden;
+}
+
+#oro-tit {
+  position: relative;
+  text-align: center;
+  top: 36%;
+}
+
+#hour {
+  margin: auto;
+  width: auto;
+  height: auto;
+  border: 1px solid crimson;
+}
+
+/*34)*/
+
+#es34 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#contImm2 {
+  position: relative;
+  display: flex;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+#istr-rid {
+  text-align: center;
+}
+
+#ridim {
+  position: absolute;
+  width: 20%;
+  top: 15%;
+  left: 40%;
+}
+
+#ridim:hover {
+  cursor: pointer;
+}
+
+#slider2 {
+  height: 100%;
+  width: 100%;
+}
+
+#buttons2 {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.scorr2 {
+  height: 40px;
+  width: 40px;
+}
+
+#sx2 {
+  height: 100%;
+  width: 100%;
+  transform: rotate(-90deg);
+}
+
+#dx2 {
+  height: 100%;
+  width: 100%;
+  transform: rotate(90deg);
+}
+
+/*35)*/
+
+#es35 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16%;
+  gap: 7%;
+}
+
+#cont-tab {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#btnTab1 {
+  background-color: yellow;
+}
+
+#btnTab2 {
+  background-color: white;
+}
+
+#btnTab3 {
+  background-color: red;
+}
+
+.conten-tab {
+  display: none;
+  padding: 15px;
+}
+
+.conten-tab.active {
+  display: block;
+}
+
+#tab1 {
+  background-color: yellow;
+}
+
+#tab2 {
+  background-color: white;
+}
+
+#tab3 {
+  background-color: red;
+}
+
+/*36)*/
+
+#es36 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#cont-elem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 50%;
+  margin: auto;
+  gap: 3%;
+}
+
+.div-elem {
+  height: 60px;
+  width: 60px;
+}
+
+#cont-com {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  bottom: 16%;
+  gap: 0.5%;
+}
+
+.comm {
+  height: auto;
+  width: auto;
+}
+
+@media screen and (max-width: 1205px) {
+  #modPar {
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+    height: auto;
+    /*width: 100%*/
+  }
+
+  #nuovopar {
+    width: 100px;
+  }
+
+  /*#pulsantiMod {
+    margin-left: 60%;
+  }*/
+
+  #modifica {
+    margin-left: auto;
+  }
+}

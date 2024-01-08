@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Hackaton</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="icons8-hackathon-64.png" />
+  </head>
+  <body onload="evento()">
+    <div id="container">
+      <div id="info">
+        <img
+          id="puntInt"
+          title="Istruzioni"
+          src="icons8-punto-interrogativo-48.png"
+          onclick="mostraNascondiIstruzioni()"
+        />
+      </div>
+      <div id="instruction">
+        <p id="close" title="CHIUDI" onclick="mostraNascondiIstruzioni()">X</p>
+        <p id="howTo">
+          Quello che vedi funziona esattamente come un televisiore qualsiasi.
+          Dal telecomando qui sotto (dopo aver acceso ovviamente ;) ), digita
+          l'esercizio che intendi visualizzare; le frecce accanto al tasto 0,
+          servono, rispettivamente, per scorrere di un esercizio avanti e di un
+          esercizio indietro rispetto all'esercizio che stai visualizzando. Per
+          informazioni sui canali, consulta il file README.md. Quando hai finito
+          ricordati di spegnere la TV, altrimenti la bolletta arriva alle stelle
+        </p>
+      </div>
+      <div id="TV">
+        <div id="black"></div>
+        <div id="canali"><p id="channel"></p></div>
+        <div id="inf">
+          <button id="spia" onclick="accendiSpegni()"></button>
+        </div>
+
+        <div id="es1">
+          <div class="contenuto1">
+            <p id="num"><b>1</b></p>
+            <div id="cambio">
+              <input type="color" id="colore" />
+              <button type="button" id="cambia" onclick="cambiaColore()">
+                CAMBIA
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es2">
+          <div class="contenuto1">
+            <p id="num"><b>2</b></p>
+            <div id="add">
+              <input type="text" id="testo" placeholder="Scrivi qualcosa..." />
+              <button type="button" id="aggiungi" onclick="scrivi()">
+                SCRIVI
+              </button>
+            </div>
+          </div>
+          <div id="newelem"></div>
+        </div>
+
+        <div id="es3">
+          <div class="contenuto2">
+            <p id="num"><b>3</b></p>
+          </div>
+          <div id="image">
+            <img id="image-uni" src="universo.jpeg" />
+          </div>
+        </div>
+
+        <div id="es4">
+          <div class="contenuto2">
+            <p id="num"><b>4</b></p>
+          </div>
+          <div id="rim">
+            <p>Clicca su X per rimuovere</p>
+            <button type="button" id="eli" onclick="elimina()">X</button>
+          </div>
+        </div>
+
+        <div id="es5">
+          <div class="contenuto2">
+            <p id="num"><b>5</b></p>
+          </div>
+          <p id="effetto">PASSAMI SOPRA COL MOUSE E CAMBIO COLORE!!!</p>
+        </div>
+
+        <div id="es6">
+          <div class="contenuto1">
+            <p id="num"><b>6</b></p>
+            <div id="nasc">
+              <button
+                type="button"
+                id="nascondiMostra"
+                onclick="mostraNascondi()"
+              ></button>
+            </div>
+          </div>
+          <div id="paragrafo6">
+            <p>
+              Clicca sul bottone qui sopra per nascondermi; successivamente
+              clicca sullo stesso bottone per mostrarmi
+            </p>
+          </div>
+        </div>
+
+        <div id="es7">
+          <div class="contenuto2">
+            <p id="num"><b>7</b></p>
+          </div>
+          <div id="modPar">
+            <p id="ParTarget">Ciao</p>
+            <input type="text" id="nuovopar" />
+            <div id="pulsantiMod">
+              <button type="button" id="modifica" onclick="modificaPar()">
+                <img src="icons8-matita-24.png" id="matita" />
+              </button>
+              <button
+                type="button"
+                id="conferma"
+                onclick="confermaMod()"
+                disabled
+              >
+                <img src="icons8-segno-di-spunta-50.png" id="spunta" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es8">
+          <div class="contenuto2">
+            <p id="num"><b>8</b></p>
+          </div>
+          <div id="contIm">
+            <img src="universo.jpeg" id="universo2" onclick="modDim()" />
+          </div>
+        </div>
+
+        <div id="es9">
+          <div class="contenuto2">
+            <p id="num"><b>9</b></p>
+          </div>
+          <p id="parCol" onclick="cambioColorePar()">
+            Clicca sopra questo paragrafo e guarda come cambia colore!!!
+          </p>
+        </div>
+
+        <div id="es10">
+          <div class="contenuto2">
+            <p id="num"><b>10</b></p>
+          </div>
+          <div id="threeButton">
+            <button type="button" class="btn">BOTTONE 1</button>
+            <button type="button" class="btn">BOTTONE 2</button>
+            <button type="button" class="btn">BOTTONE 3</button>
+          </div>
+        </div>
+
+        <div id="es11">
+          <div class="contenuto2">
+            <p id="num"><b>11</b></p>
+          </div>
+          <p id="attivo">
+            Clicca sopra questo testo per vedere come si illumina!!!
+          </p>
+        </div>
+
+        <div id="es12">
+          <div class="contenuto2">
+            <p id="num"><b>12</b></p>
+          </div>
+          <div id="lista1">
+            <ul>
+              <li class="elem1">Passa sopra col mouse per evidenziare</li>
+              <li class="elem1">Passa sopra col mouse per evidenziare</li>
+              <li class="elem1">Passa sopra col mouse per evidenziare</li>
+              <li class="elem1">Passa sopra col mouse per evidenziare</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="es13">
+          <div class="contenuto2">
+            <p id="num"><b>13</b></p>
+          </div>
+          <div id="lista2">
+            <div id="btn-add">
+              <input
+                type="text"
+                id="addElem"
+                placeholder="Scrivi qualcosa..."
+              />
+              <button type="button" id="add-li" onclick="addElemLi()">
+                AGGIUNGI
+              </button>
+            </div>
+            <ul id="list2"></ul>
+          </div>
+        </div>
+
+        <div id="es14">
+          <div class="contenuto2">
+            <p id="num"><b>14</b></p>
+          </div>
+          <div id="btn-counter">
+            <button type="button" id="button-add" onclick="contaClick()">
+              CLICCA
+            </button>
+            <div id="circleCount">
+              <p id="contatore"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="es15">
+          <div class="contenuto2">
+            <p id="num"><b>15</b></p>
+          </div>
+          <p id="istruzioni">
+            Posiziona il mouse sull'area colorata e successivamente spostalo al
+            di fuori della stessa per vedere come l'area cambia colore!!!
+          </p>
+          <div id="divTar"></div>
+        </div>
+
+        <div id="es16">
+          <div class="contenuto2">
+            <p id="num"><b>16</b></p>
+          </div>
+          <div id="contDivImages">
+            <div class="smImg">
+              <img class="small" src="scale a chiocciola.jpg" />
+            </div>
+            <div class="smImg"><img class="small" src="IA.jpg" /></div>
+            <div class="smImg">
+              <img class="small" src="Euclid-ERO-Horsehead-scaled.jpg" />
+            </div>
+            <div class="smImg"><img class="small" src="medusa.jpeg" /></div>
+            <div class="MxImg"><img id="maxi" src="universo.jpeg" /></div>
+            <div class="smImg">
+              <img class="small" src="tramonto giungla.jpeg" />
+            </div>
+            <div class="smImg">
+              <img class="small" src="nasa.jpg" />
+            </div>
+            <div class="smImg"><img class="small" src="pontile.jpeg" /></div>
+            <div class="smImg"><img class="small" src="illusione.jpeg" /></div>
+          </div>
+        </div>
+
+        <div id="es17">
+          <div class="contenuto2">
+            <p id="num"><b>17</b></p>
+          </div>
+          <div id="cont-menu">
+            <div id="cont-tend">
+              <p id="scrittamenu">
+                <b>MENU</b>
+              </p>
+              <img src="icons8-freccia-comprimi-64.png" id="compr" />
+            </div>
+            <div id="menu-tend">
+              <ul id="lista3">
+                <li class="elem-menu"><a href="#">Opzione1</a></li>
+                <li class="elem-menu"><a href="#">Opzione2</a></li>
+                <li class="elem-menu"><a href="#">Opzione3</a></li>
+                <li class="elem-menu"><a href="#">Opzione4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="es18">
+          <div class="contenuto2">
+            <p id="num"><b>18</b></p>
+          </div>
+
+          <div id="cont-anim">
+            <p id="istr">
+              Premi la freccia destra per muovere la figura verso destra, premi
+              la freccia sinistra per muoverla verso sinistra
+            </p>
+            <div id="anim"></div>
+            <div id="contF">
+              <button type="button" id="muovi-s" class="FrecciaDir">
+                <img id="frecciaS" src="icons8-freccia-comprimi-64.png" />
+              </button>
+              <button type="button" id="muovi-d" class="FrecciaDir">
+                <img id="frecciaD" src="icons8-freccia-comprimi-64.png" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es19">
+          <div class="contenuto2">
+            <p id="num"><b>19</b></p>
+          </div>
+          <div id="write">
+            <p id="istr3">
+              Scrivi nel campo input e osserva cosa succede nel paragrafo sotto
+              (inizialmente vuoto) mentre stai scrivendo!!!
+            </p>
+            <input type="text" id="testoadd" placeholder="Scrivi qualcosa..." />
+            <p id="testo2"></p>
+          </div>
+        </div>
+
+        <div id="es20">
+          <div class="contenuto2">
+            <p id="num"><b>20</b></p>
+          </div>
+          <div id="ctr-vis">
+            <input type="checkbox" id="ck-vis" />
+            <p id="vis">Ciao</p>
+          </div>
+        </div>
+
+        <div id="es21">
+          <div class="contenuto2">
+            <p id="num"><b>21</b></p>
+          </div>
+          <div id="cont-sty">
+            <p id="istr4">
+              Scrivi lo stile (font family) che vuoi dare al paragrafo sotto
+            </p>
+            <input type="text" id="ad-style" placeholder="Scrivi lo stile..." />
+            <p id="par-sty">Ciao</p>
+          </div>
+        </div>
+
+        <div id="es22">
+          <div class="contenuto2">
+            <p id="num"><b>22</b></p>
+          </div>
+          <div id="contImm">
+            <img src="" id="slider" />
+            <div id="buttons">
+              <button type="button" id="btn-s" class="scorr">
+                <img src="icons8-freccia-comprimi-64.png" id="sx" />
+              </button>
+              <button type="button" id="btn-d" class="scorr">
+                <img src="icons8-freccia-comprimi-64.png" id="dx" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es23">
+          <div class="contenuto2">
+            <p id="num"><b>23</b></p>
+          </div>
+          <div id="cont-dis">
+            <p id="istr-dis">
+              Clicca nel riquadro arancione per farlo dissolvere,
+              successivamente clicca nel bottone che apparirà per farlo
+              dissolvere e far ricomparire nuovamente il riquadro!!!
+            </p>
+            <div id="div-dis" class="dis"></div>
+            <button id="btn-dis" class="dis">CLICCA</button>
+          </div>
+        </div>
+
+        <div id="es24">
+          <div class="contenuto2">
+            <p id="num"><b>24</b></p>
+          </div>
+          <div id="timer">
+            <div id="int-tim">
+              <h2 id="tit-tim">TIMER</h2>
+            </div>
+            <div id="temp">
+              <div class="cella">
+                <p>h</p>
+                <input type="number" class="dig" id="dig-h" />
+                <p class="tempo" id="ore"></p>
+              </div>
+              <p class="tempo" id="due-p">:</p>
+              <div class="cella">
+                <p>m</p>
+                <input type="number" class="dig" id="dig-min" />
+                <p class="tempo" id="minuti"></p>
+              </div>
+              <p class="tempo" id="due-p">:</p>
+              <div class="cella">
+                <p>s</p>
+                <input type="number" class="dig" id="dig-sec" />
+                <p class="tempo" id="secondi"></p>
+              </div>
+            </div>
+            <div id="funz">
+              <button type="button" class="btn-fun" id="avvio">START</button>
+              <button type="button" class="btn-fun" id="arresto">STOP</button>
+              <button type="button" class="btn-fun" id="reset">RESET</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es25">
+          <div class="contenuto2">
+            <p id="num"><b>25</b></p>
+          </div>
+          <div id="div-coord"></div>
+          <p id="coord-x">x:</p>
+          <p id="coord-y">y:</p>
+        </div>
+
+        <div id="es26">
+          <div class="contenuto1">
+            <p id="num"><b>26</b></p>
+            <div id="sel-sf">
+              <select id="list-sf">
+                <option value="standard">Nessuna</option>
+                <option value="illusione.jpeg">Illusione</option>
+                <option value="nasa.jpg">Nasa</option>
+                <option value="pontile.jpeg">Pontile</option>
+                <option value="medusa.jpeg">Medusa</option>
+                <option value="IA.jpg">IA</option>
+                <option value="tramonto giungla.jpeg">Tramonto Giungla</option>
+                <option value="universo.jpeg">Universo</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="es27">
+          <div class="contenuto2">
+            <p id="num"><b>27</b></p>
+          </div>
+          <div id="cont-bar">
+            <div id="bar">
+              <div id="bar-car"></div>
+              <p id="perc-car"></p>
+            </div>
+            <button type="button" id="aum-perc">CLICCA</button>
+          </div>
+        </div>
+
+        <div id="es28">
+          <div class="contenuto2">
+            <p id="num"><b>28</b></p>
+          </div>
+          <div id="cont-form">
+            <form name="mioForm" id="form1">
+              <div id="top-form">
+                <h1 id="form-head">FORM</h1>
+                <p>I seguenti campi sono obbligatori *</p>
+              </div>
+              <fieldset>
+                <legend>Dati anagrafici</legend>
+                <label>
+                  <table id="Dati anagrafici" cellspacing="4">
+                    <tr>
+                      <td>
+                        Nome*<br />
+                        <input
+                          type="text"
+                          placeholder="Inserisci nome"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                      <td>
+                        Cognome*<br /><input
+                          type="text"
+                          placeholder="Inserisci cognome"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Sesso*<br />Maschio<input
+                          name="sex"
+                          type="radio"
+                          required
+                        /><br />Femmina<input
+                          name="sex"
+                          type="radio"
+                          required
+                        />
+                      </td>
+                      <td>
+                        Data di nascita*<br /><input
+                          type="date"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                      <td>
+                        Luogo di nascita*<br /><input
+                          type="text"
+                          placeholder="Inserisci luogo di nascita"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        Nazionalita'*<br /><input
+                          type="text"
+                          placeholder="Inserisci nazionalità"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                    </tr>
+                  </table>
+                </label>
+              </fieldset>
+              <fieldset>
+                <legend>Informazioni di contatto:</legend>
+                <label>
+                  <table name="contatto" cellspacing="4">
+                    <tr>
+                      <td>
+                        Indirizzo e-mail*<br /><input
+                          type="email"
+                          id="Inp-mail"
+                          placeholder="mail@example.it"
+                          class="Oblig"
+                          required
+                        />
+                        <p class="avviso"></p>
+                      </td>
+                      <td>
+                        Telefono (se lo si possiede) <br /><input
+                          type="number"
+                        />
+                      </td>
+                      <td>
+                        Cellulare*<br />
+                        <input type="number" class="Oblig" required />
+                        <p class="avviso"></p>
+                      </td>
+                    </tr>
+                  </table>
+                </label>
+              </fieldset>
+              <p>
+                Per cancellare tutte le informazioni, premere il seguente tasto:
+              </p>
+              <button type="reset" id="btn-canc">
+                <p>Cancella</p>
+              </button>
+              <p>Per inviare il form, premere il seguente tasto:</p>
+              <button type="submit" id="btn-subm">
+                <p>Invia</p>
+              </button>
+            </form>
+          </div>
+          <!--fine cont-form-->
+        </div>
+
+        <div id="es29">
+          <div class="contenuto2">
+            <p id="num"><b>29</b></p>
+          </div>
+          <div id="tit-toolt">
+            <p>
+              Passa il mouse sopra a ciascuno dei due paragrafi sotto per vedere
+              dei tooltip!!!
+            </p>
+          </div>
+          <div id="cont-effects">
+            <div class="cont-toolt">
+              <p>PASSA QUI IL MOUSE</p>
+              <span class="toolt">
+                <p>Ciao, questo è un tooltip!!!</p>
+              </span>
+            </div>
+            <div class="cont-toolt">
+              <p>PASSA QUI IL MOUSE PER VEDERE UN IMMAGINE DELL'UNIVERSO!!!</p>
+              <span class="toolt">
+                <img src="universo.jpeg" id="img-toolt" />
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="es30">
+          <div class="contenuto2">
+            <p id="num"><b>30</b></p>
+          </div>
+          <div id="cont-imm-drag">
+            <img
+              id="img-drag"
+              src="icons8-freccia-comprimi-64.png"
+              draggable="true"
+            />
+          </div>
+          <div id="div-target"></div>
+        </div>
+
+        <div id="es31">
+          <div class="contenuto2">
+            <p id="num"><b>31</b></p>
+          </div>
+          <div id="cont-gen">
+            <p>Clicca sul bottone sotto per generare un numero casuale</p>
+            <button type="button" id="gen-num">GENERA</button>
+            <p id="cont-num"></p>
+          </div>
+        </div>
+
+        <div id="es32">
+          <div class="contenuto2">
+            <p id="num"><b>32</b></p>
+          </div>
+          <div id="cont-animaz">
+            <p>
+              Clicca su "AVVIA" in fondo per animare l'immagine e clicca su
+              "FERMA" per fermare l'animazione
+            </p>
+            <div id="div-animato"></div>
+            <div id="cont-btn-gen">
+              <button type="button" class="gen-anim" id="avvia-anim">
+                AVVIA
+              </button>
+              <button type="button" class="gen-anim" id="ferma-anim" disabled>
+                FERMA
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es33">
+          <div class="contenuto2">
+            <p id="num"><b>33</b></p>
+          </div>
+          <p id="oro-tit">OROLOGIO:</p>
+          <div id="hour">
+            <p id="ore"></p>
+          </div>
+        </div>
+
+        <div id="es34">
+          <div class="contenuto2">
+            <p id="num"><b>34</b></p>
+          </div>
+          <p id="istr-rid">
+            Utilizza la barra sottostante per ridimensionare l'immagine
+          </p>
+          <input type="range" min="10" max="100" value="100" id="ridim" />
+          <div id="contImm2">
+            <img src="" id="slider2" />
+            <div id="buttons2">
+              <button type="button" id="btn-s2" class="scorr2">
+                <img src="icons8-freccia-comprimi-64.png" id="sx2" />
+              </button>
+              <button type="button" id="btn-d2" class="scorr2">
+                <img src="icons8-freccia-comprimi-64.png" id="dx2" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="es35">
+          <div class="contenuto2">
+            <p id="num"><b>35</b></p>
+          </div>
+          <div id="cont-all">
+            <div id="cont-tab">
+              <div class="tab" id="btnTab1">Tab Giallo</div>
+              <div class="tab" id="btnTab2">Tab Bianco</div>
+              <div class="tab" id="btnTab3">Tab Rosso</div>
+            </div>
+
+            <div id="tab1" class="conten-tab active">Tab Giallo</div>
+            <div id="tab2" class="conten-tab">Tab Bianco</div>
+            <div id="tab3" class="conten-tab">Tab Rosso</div>
+          </div>
+        </div>
+
+        <div id="es36">
+          <div class="contenuto2">
+            <p id="num"><b>36</b></p>
+          </div>
+          <div id="cont-elem">
+            <div class="div-elem" style="background-color: red"></div>
+            <div class="div-elem" style="background-color: yellow"></div>
+            <div class="div-elem" style="background-color: green"></div>
+          </div>
+          <div id="cont-com">
+            <button class="comm" id="colonna">Colonna</button>
+            <button class="comm" id="riga">Riga</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="telecomando">
+        <table id="tb">
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <button type="button" id="onOff" onclick="accendiSpegni()">
+                <img src="icons8-pulsante-di-spegnimento-50.png" id="AccSp" />
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" class="canale">1</button>
+            </td>
+            <td>
+              <button type="button" class="canale">2</button>
+            </td>
+            <td><button type="button" class="canale">3</button></td>
+          </tr>
+          <tr>
+            <td><button type="button" class="canale">4</button></td>
+            <td><button type="button" class="canale">5</button></td>
+            <td><button type="button" class="canale">6</button></td>
+          </tr>
+          <tr>
+            <td><button type="button" class="canale">7</button></td>
+            <td><button type="button" class="canale">8</button></td>
+            <td><button type="button" class="canale">9</button></td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" id="Freccia" onclick="avanti()">
+                <img src="icons8-su-50.png" id="frecciaSu" />
+              </button>
+            </td>
+            <td><button type="button" class="canale">0</button></td>
+            <td>
+              <button type="button" id="Freccia" onclick="indietro()">
+                <img src="icons8-su-50.png" id="frecciaGiu" />
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
