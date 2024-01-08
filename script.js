@@ -10,7 +10,7 @@ document.getElementById("colore").value = "#DBC5C5";
 
 //Generazione canali
 
-for (let i = 1; i <= 36; i++) programmi[i] = "es" + i;
+for (let i = 1; i <= 37; i++) programmi[i] = "es" + i;
 
 canaleCorrente = programmi[1];
 
@@ -859,3 +859,63 @@ function disponi() {
 
 for (let i = 0; i < comm.length; i++)
   comm[i].addEventListener("click", disponi);
+
+//es37
+
+let risp = document.getElementsByClassName("risp");
+let giusta;
+let giuste = 0;
+let tentativi = 3;
+let t;
+let v;
+document.getElementById("punti").innerHTML = giuste;
+document.getElementById("vite").innerHTML = tentativi;
+
+function genera() {
+  let t;
+  v = true;
+  let c;
+  let y;
+  t = document.getElementById("game");
+
+  for (let i = 1; i < t.childNodes.length; i += 2) {
+    if (v == true) {
+      y = parseInt(Math.floor(Math.random() * 12));
+      if (y % 2 == 0) y += 1;
+      i = -1;
+      t.childNodes[y].innerHTML = parseInt(Math.floor(Math.random() * 11));
+      giusta = t.childNodes[y].innerHTML;
+      v = false;
+    } else {
+      c = parseInt(Math.floor(Math.random() * 11));
+
+      while (c == giusta) c = parseInt(Math.floor(Math.random() * 11));
+
+      if (i == y) continue;
+
+      t.childNodes[i].innerHTML = c;
+    }
+  }
+}
+
+genera();
+
+function calcola() {
+  if (this.innerHTML == giusta) giuste += 1;
+  else tentativi -= 1;
+  document.getElementById("punti").innerHTML = giuste;
+  document.getElementById("vite").innerHTML = tentativi;
+  if (tentativi != 0) genera();
+  if (tentativi == 0)
+    if (confirm("GAME OVER!!! RIPROVARE?") == true) {
+      tentativi = 3;
+      giuste = 0;
+      document.getElementById("punti").innerHTML = giuste;
+      document.getElementById("vite").innerHTML = tentativi;
+      genera();
+    } else for (let i = 0; i < risp.length; i++) risp[i].disabled = true;
+}
+
+for (let i = 0; i < risp.length; i++) {
+  risp[i].addEventListener("click", calcola);
+}

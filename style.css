@@ -1550,6 +1550,44 @@ li {
   width: auto;
 }
 
+/*37)*/
+
+#es37 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#header {
+  position: absolute;
+  top: 15%;
+  left: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  height: auto;
+}
+
+#game {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  width: 20%;
+  height: 30%;
+  gap: 7%;
+}
+
+.risp {
+  width: 44px;
+  height: 18px;
+}
+
 @media screen and (max-width: 1205px) {
   #modPar {
     display: flex;
