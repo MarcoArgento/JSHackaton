@@ -767,8 +767,10 @@ function animDiv() {
       col = parseInt(Math.floor(Math.random() * colori.length));
       divAnim.style.backgroundColor = colori[col];
     }, 170);
+    document.getElementById("avvia-anim").disabled = true;
     document.getElementById("ferma-anim").disabled = false;
   } else {
+    document.getElementById("avvia-anim").disabled = false;
     document.getElementById("ferma-anim").disabled = true;
     clearInterval(animazione);
     divAnim.style.width = 20 + "%";
