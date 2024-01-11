@@ -1,133 +1,3 @@
-let programmi = [];
-let canaleCorrente;
-let canale = document.getElementById("channel");
-let buttons = document.getElementsByClassName("canale");
-let cc = 1;
-
-document.getElementById("black").style.visibility = "visible";
-document.getElementById("spia").style.backgroundColor = "red";
-document.getElementById("colore").value = "#DBC5C5";
-
-//Generazione canali
-
-for (let i = 1; i <= 37; i++) programmi[i] = "es" + i;
-
-canaleCorrente = programmi[1];
-
-//Mostra o nascondi le istruzioni
-
-let instr = document.getElementById("instruction");
-instr.style.visibility = "hidden";
-
-function mostraNascondiIstruzioni() {
-  if (instr.style.visibility == "hidden") {
-    instr.style.visibility = "visible";
-    instr.style.zIndex = "3";
-  } else {
-    instr.style.visibility = "hidden";
-    instr.style.zIndex = "0";
-  }
-}
-
-//Accensione spegnimento TV
-
-function accendiSpegni() {
-  if (document.getElementById("black").style.visibility == "visible") {
-    document.getElementById("black").style.visibility = "hidden";
-    document.getElementById("black").style.zIndex = "0";
-    document.getElementById("spia").style.backgroundColor = "green";
-    document.getElementById("canali").style.visibility = "visible";
-    document.getElementById(canaleCorrente).style.visibility = "visible";
-    document.getElementById(canaleCorrente).style.zIndex = "1";
-  } else {
-    canale.innerHTML = "";
-    document.getElementById("black").style.visibility = "visible";
-    document.getElementById("black").style.zIndex = "2";
-    document.getElementById("spia").style.backgroundColor = "red";
-    document.getElementById("canali").style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.zIndex = "0";
-  }
-}
-
-function evento() {
-  let cambiaCanale = function () {
-    if (document.getElementById("black").style.visibility == "visible") {
-      alert("Prima accendi la TV");
-    } else if (canale.innerHTML == "" && this.innerHTML == "0") {
-      canale.innerHTML = "";
-    } else if (canale.innerHTML != "") {
-      canale.innerHTML += this.innerHTML;
-    } else {
-      canale.innerHTML = this.innerHTML;
-    }
-    let change = setTimeout(function () {
-      if (
-        parseInt(canale.innerHTML) >= programmi.length ||
-        programmi[parseInt(canale.innerHTML)] == canaleCorrente
-      ) {
-        canale.innerHTML = "";
-      } else {
-        if (canale.innerHTML != "") {
-          document.getElementById(canaleCorrente).style.visibility = "hidden";
-          document.getElementById(canaleCorrente).style.zIndex = "0";
-          cc = parseInt(canale.innerHTML);
-          canaleCorrente = programmi[cc];
-          document.getElementById(canaleCorrente).style.visibility = "visible";
-          document.getElementById(canaleCorrente).style.zIndex = "1";
-          canale.innerHTML = "";
-        }
-      }
-    }, 1500);
-  };
-  for (let i = 0; i <= buttons.length; i++)
-    buttons[i].addEventListener("click", cambiaCanale);
-}
-
-function avanti() {
-  if (document.getElementById("black").style.visibility == "visible") {
-    alert("Prima accendi la TV");
-  } else if (canaleCorrente == programmi[programmi.length - 1]) {
-    canale.innerHTML = "";
-    document.getElementById(canaleCorrente).style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.zIndex = "0";
-    canaleCorrente = programmi[1];
-    cc = 1;
-    document.getElementById(canaleCorrente).style.visibility = "visible";
-    document.getElementById(canaleCorrente).style.zIndex = "1";
-  } else {
-    canale.innerHTML = "";
-    document.getElementById(canaleCorrente).style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.zIndex = "0";
-    cc += 1;
-    canaleCorrente = programmi[cc];
-    document.getElementById(canaleCorrente).style.zIndex = "1";
-    document.getElementById(canaleCorrente).style.visibility = "visible";
-  }
-}
-
-function indietro() {
-  if (document.getElementById("black").style.visibility == "visible")
-    alert("Prima accendi la TV");
-  else if (canaleCorrente == programmi[1]) {
-    canale.innerHTML = "";
-    document.getElementById(canaleCorrente).style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.zIndex = "0";
-    cc = parseInt(programmi.length - 1);
-    canaleCorrente = programmi[cc];
-    document.getElementById(canaleCorrente).style.zIndex = "1";
-    document.getElementById(canaleCorrente).style.visibility = "visible";
-  } else {
-    canale.innerHTML = "";
-    document.getElementById(canaleCorrente).style.visibility = "hidden";
-    document.getElementById(canaleCorrente).style.zIndex = "0";
-    cc -= 1;
-    canaleCorrente = programmi[cc];
-    document.getElementById(canaleCorrente).style.zIndex = "1";
-    document.getElementById(canaleCorrente).style.visibility = "visible";
-  }
-}
-
 //es1
 
 function cambiaColore() {
@@ -919,3 +789,42 @@ function calcola() {
 for (let i = 0; i < risp.length; i++) {
   risp[i].addEventListener("click", calcola);
 }
+
+//es38
+
+let textEdit = document.getElementById("text-edit");
+let options = document.getElementsByClassName("formatt");
+let CharCode;
+let cors = false;
+
+function formatta() {
+  if (this.id == "bold")
+    if (cors == false) {
+      textEdit.document.execCommand("bold", false, null);
+      cors = true;
+    } else {
+      textEdit.execCommand("normal", null);
+      cors = false;
+    }
+  //textEdit.style.fontWeight = "bold";
+  // else textEdit.innerHTML = `<b>`;
+  else if (this.id == "italic") textEdit.style.fontStyle = "italic";
+  else textEdit.style.fontStyle = "normal";
+}
+
+//`url("${this.value}")`;
+
+function dec() {
+  this.style.textDecoration = "none";
+}
+
+for (let i = 0; i < options.length; i++)
+  options[i].addEventListener("click", formatta);
+
+textEdit.addEventListener("click", dec);
+
+let txtInput = document.getElementById("text-edit");
+txtInput.onkeyup = function (e) {
+  let charCode = e.which;
+  console.log(charCode);
+};

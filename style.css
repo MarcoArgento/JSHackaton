@@ -1588,6 +1588,54 @@ li {
   height: 18px;
 }
 
+/*40)*/
+
+#es38 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 98%;
+  width: 100%;
+  background-color: rgb(219, 197, 197);
+  visibility: hidden;
+}
+
+#editor-cont {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 80%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  border: 1px solid black;
+  gap: 3%;
+}
+
+#cont-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.formatt {
+  height: auto;
+  width: auto;
+}
+
+#text-edit {
+  position: relative;
+  border: none;
+  outline: none;
+}
+
 @media screen and (max-width: 1205px) {
   #modPar {
     display: flex;

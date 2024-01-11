@@ -714,6 +714,22 @@
             <button class="risp"></button>
           </div>
         </div>
+
+        <div id="es38">
+          <div class="contenuto2">
+            <p id="num"><b>40</b></p>
+          </div>
+          <div id="editor-cont">
+            <div id="options">
+              <button type="button" class="formatt" id="bold">BOLD</button>
+              <button type="button" class="formatt" id="italic">ITALIC</button>
+              <button type="button" class="formatt" id="normal">NORMAL</button>
+            </div>
+            <div id="cont-text">
+              <p id="text-edit" contenteditable="true"></p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div id="telecomando">
@@ -748,13 +764,13 @@
           </tr>
           <tr>
             <td>
-              <button type="button" id="Freccia" onclick="avanti()">
+              <button type="button" class="freccia" id="btn-Su">
                 <img src="icons8-su-50.png" id="frecciaSu" />
               </button>
             </td>
             <td><button type="button" class="canale">0</button></td>
             <td>
-              <button type="button" id="Freccia" onclick="indietro()">
+              <button type="button" class="freccia" id="btn-Giu">
                 <img src="icons8-su-50.png" id="frecciaGiu" />
               </button>
             </td>
@@ -762,6 +778,7 @@
         </table>
       </div>
     </div>
+    <script src="scriptTv.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
