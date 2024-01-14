@@ -660,15 +660,16 @@ for (let i = 0; i < genAnim.length; i++)
 
 let hour = document.getElementById("hour");
 let orario;
+let min;
+let sec;
 
 setInterval(function () {
   orario = new Date();
-  hour.innerText =
-    orario.getHours() +
-    " : " +
-    orario.getMinutes() +
-    " : " +
-    orario.getSeconds();
+  min = orario.getMinutes();
+  sec = orario.getSeconds();
+  if (min < 10) min = "0" + min;
+  if (sec < 10) sec = "0" + sec;
+  hour.innerText = orario.getHours() + " : " + min + " : " + sec;
 }, 1000);
 
 //es34
