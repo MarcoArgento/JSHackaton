@@ -4,6 +4,7 @@ let canale = document.getElementById("channel");
 let buttons = document.getElementsByClassName("canale");
 let cc = 1;
 let frecciaC = document.getElementsByClassName("freccia");
+let accesa = false;
 
 document.getElementById("black").style.visibility = "visible";
 document.getElementById("spia").style.backgroundColor = "red";
@@ -11,7 +12,7 @@ document.getElementById("colore").value = "#DBC5C5";
 
 //Generazione canali
 
-for (let i = 1; i <= 38; i++) programmi[i] = "es" + i;
+for (let i = 1; i <= 37; i++) programmi[i] = "es" + i;
 
 canaleCorrente = programmi[1];
 
@@ -37,6 +38,13 @@ function accendiSpegni() {
     document.getElementById("black").style.visibility = "hidden";
     document.getElementById("black").style.zIndex = "0";
     document.getElementById("spia").style.backgroundColor = "green";
+    document.getElementById("scherm-avvio").style.visibility = "visible";
+    document.getElementById("scherm-avvio").style.zIndex = "2";
+    setTimeout(function () {
+      document.getElementById("scherm-avvio").style.visibility = "hidden";
+      document.getElementById("scherm-avvio").style.zIndex = "0";
+      accesa = true;
+    }, 2000);
     document.getElementById("canali").style.visibility = "visible";
     document.getElementById(canaleCorrente).style.visibility = "visible";
     document.getElementById(canaleCorrente).style.zIndex = "1";
@@ -48,6 +56,7 @@ function accendiSpegni() {
     document.getElementById("canali").style.visibility = "hidden";
     document.getElementById(canaleCorrente).style.visibility = "hidden";
     document.getElementById(canaleCorrente).style.zIndex = "0";
+    accesa = false;
   }
 }
 
@@ -55,6 +64,8 @@ function evento() {
   let cambiaCanale = function () {
     if (document.getElementById("black").style.visibility == "visible") {
       alert("Prima accendi la TV");
+    } else if (accesa == false) {
+      alert("Aspetta che si accenda la TV");
     } else if (canale.innerHTML == "" && this.innerHTML == "0") {
       canale.innerHTML = "";
     } else if (canale.innerHTML != "") {
@@ -62,24 +73,27 @@ function evento() {
     } else {
       canale.innerHTML = this.innerHTML;
     }
-    let change = setTimeout(function () {
-      if (
-        parseInt(canale.innerHTML) >= programmi.length ||
-        programmi[parseInt(canale.innerHTML)] == canaleCorrente
-      ) {
-        canale.innerHTML = "";
-      } else {
-        if (canale.innerHTML != "") {
-          document.getElementById(canaleCorrente).style.visibility = "hidden";
-          document.getElementById(canaleCorrente).style.zIndex = "0";
-          cc = parseInt(canale.innerHTML);
-          canaleCorrente = programmi[cc];
-          document.getElementById(canaleCorrente).style.visibility = "visible";
-          document.getElementById(canaleCorrente).style.zIndex = "1";
+    if (canale.innerHTML != "") {
+      let change = setTimeout(function () {
+        if (
+          parseInt(canale.innerHTML) >= programmi.length ||
+          programmi[parseInt(canale.innerHTML)] == canaleCorrente
+        ) {
           canale.innerHTML = "";
+        } else {
+          if (canale.innerHTML != "") {
+            document.getElementById(canaleCorrente).style.visibility = "hidden";
+            document.getElementById(canaleCorrente).style.zIndex = "0";
+            cc = parseInt(canale.innerHTML);
+            canaleCorrente = programmi[cc];
+            document.getElementById(canaleCorrente).style.visibility =
+              "visible";
+            document.getElementById(canaleCorrente).style.zIndex = "1";
+            canale.innerHTML = "";
+          }
         }
-      }
-    }, 1500);
+      }, 1500);
+    }
   };
   for (let i = 0; i <= buttons.length; i++)
     buttons[i].addEventListener("click", cambiaCanale);
@@ -88,7 +102,9 @@ function evento() {
 function avantiIndietro() {
   if (document.getElementById("black").style.visibility == "visible")
     alert("Prima accendi la TV");
-  else {
+  else if (accesa == false) {
+    alert("Aspetta che si accenda la TV");
+  } else {
     canale.innerHTML = "";
     document.getElementById(canaleCorrente).style.visibility = "hidden";
     document.getElementById(canaleCorrente).style.zIndex = "0";

@@ -738,8 +738,8 @@ let giuste = 0;
 let tentativi = 3;
 let t;
 let v;
-document.getElementById("punti").innerHTML = giuste;
-document.getElementById("vite").innerHTML = tentativi;
+document.getElementById("punti").innerHTML = "Punti: " + giuste;
+document.getElementById("vite").innerHTML = "Tentativi rimanenti: " + tentativi;
 
 function genera() {
   let t;
@@ -773,15 +773,17 @@ genera();
 function calcola() {
   if (this.innerHTML == giusta) giuste += 1;
   else tentativi -= 1;
-  document.getElementById("punti").innerHTML = giuste;
-  document.getElementById("vite").innerHTML = tentativi;
+  document.getElementById("punti").innerHTML = "Punti: " + giuste;
+  document.getElementById("vite").innerHTML =
+    "Tentativi rimanenti: " + tentativi;
   if (tentativi != 0) genera();
   if (tentativi == 0)
     if (confirm("GAME OVER!!! RIPROVARE?") == true) {
       tentativi = 3;
       giuste = 0;
-      document.getElementById("punti").innerHTML = giuste;
-      document.getElementById("vite").innerHTML = tentativi;
+      document.getElementById("punti").innerHTML = "Punti: " + giuste;
+      document.getElementById("vite").innerHTML =
+        "Tentativi rimanenti: " + tentativi;
       genera();
     } else for (let i = 0; i < risp.length; i++) risp[i].disabled = true;
 }
@@ -789,42 +791,3 @@ function calcola() {
 for (let i = 0; i < risp.length; i++) {
   risp[i].addEventListener("click", calcola);
 }
-
-//es38
-
-let textEdit = document.getElementById("text-edit");
-let options = document.getElementsByClassName("formatt");
-let CharCode;
-let cors = false;
-
-function formatta() {
-  if (this.id == "bold")
-    if (cors == false) {
-      textEdit.document.execCommand("bold", false, null);
-      cors = true;
-    } else {
-      textEdit.execCommand("normal", null);
-      cors = false;
-    }
-  //textEdit.style.fontWeight = "bold";
-  // else textEdit.innerHTML = `<b>`;
-  else if (this.id == "italic") textEdit.style.fontStyle = "italic";
-  else textEdit.style.fontStyle = "normal";
-}
-
-//`url("${this.value}")`;
-
-function dec() {
-  this.style.textDecoration = "none";
-}
-
-for (let i = 0; i < options.length; i++)
-  options[i].addEventListener("click", formatta);
-
-textEdit.addEventListener("click", dec);
-
-let txtInput = document.getElementById("text-edit");
-txtInput.onkeyup = function (e) {
-  let charCode = e.which;
-  console.log(charCode);
-};

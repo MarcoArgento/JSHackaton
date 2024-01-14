@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Hackaton</title>
     <link href="style.css" rel="stylesheet" />
+    <link href="styleTV.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="icons8-hackathon-64.png" />
   </head>
   <body onload="evento()">
@@ -31,6 +32,10 @@
       </div>
       <div id="TV">
         <div id="black"></div>
+        <div id="scherm-avvio">
+          <h1 class="tit-tv">JS HACKATON</h1>
+          <h1 class="tit-tv">TV</h1>
+        </div>
         <div id="canali"><p id="channel"></p></div>
         <div id="inf">
           <button id="spia" onclick="accendiSpegni()"></button>
@@ -701,32 +706,19 @@
           <div class="contenuto2">
             <p id="num"><b>37</b></p>
           </div>
-          <div id="header">
-            <p id="vite"></p>
-            <p id="punti"></p>
-          </div>
-          <div id="game">
-            <button class="risp"></button>
-            <button class="risp"></button>
-            <button class="risp"></button>
-            <button class="risp"></button>
-            <button class="risp"></button>
-            <button class="risp"></button>
-          </div>
-        </div>
-
-        <div id="es38">
-          <div class="contenuto2">
-            <p id="num"><b>40</b></p>
-          </div>
-          <div id="editor-cont">
-            <div id="options">
-              <button type="button" class="formatt" id="bold">BOLD</button>
-              <button type="button" class="formatt" id="italic">ITALIC</button>
-              <button type="button" class="formatt" id="normal">NORMAL</button>
+          <div id="cont-game">
+            <div id="game-tit"><h1>INDOVINA IL NUMERO!!</h1></div>
+            <div id="header">
+              <p id="vite"></p>
+              <p id="punti"></p>
             </div>
-            <div id="cont-text">
-              <p id="text-edit" contenteditable="true"></p>
+            <div id="game">
+              <button class="risp"></button>
+              <button class="risp"></button>
+              <button class="risp"></button>
+              <button class="risp"></button>
+              <button class="risp"></button>
+              <button class="risp"></button>
             </div>
           </div>
         </div>
